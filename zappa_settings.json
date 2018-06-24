@@ -1,0 +1,6 @@
+{
+    "dev": {
+        "s3_bucket": "steeleye-lambda",
+        "app_function": "assignment.app"
+    }
+}
