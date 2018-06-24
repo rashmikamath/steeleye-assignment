@@ -67,8 +67,8 @@ def assignment():
         file_name = hashlib.md5(str(time.time()).encode('utf-8')).hexdigest() + '.json'
         json_file = json.dumps(list_of_entries)
         s3 = boto3.resource('s3')
-        object = s3.Object('steeleye', file_name)
-        object.put(Body=json_file)
+        s3_object = s3.Object('steeleye', file_name)
+        s3_object.put(Body=json_file)
         bucket_url = 'https://s3.ap-south-1.amazonaws.com/steeleye/'
         return json.dumps({"file_name": bucket_url + file_name, "status": "Success"})
 
